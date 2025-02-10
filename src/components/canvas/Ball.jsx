@@ -11,7 +11,11 @@ import {
 import CanvasLoader from "../Loader";
 
 const Ball = (props) => {
-  const [decal] = useTexture([props.imgUrl]);
+  // const [decal] = useTexture([props.imgUrl]);
+  const [decal] = useTexture([props.imgUrl], undefined, (error) => {
+    console.error("Failed to load texture:", error);
+  });
+
   return (
     <Float speed={1.75} rotationIntensity={1} floatIntensity={2}>
       <ambientLight intensity={1.0} />
