@@ -46,11 +46,20 @@ import fishing from "./fishingVessel.png";
 import vape from "./vape.png";
 import bully from "./bully.png";
 import gameproject from "./game.png";
-
+import profilePic from "./profilePic.png";
 import chong from "./chong.jpg";
 import pak from "./pak.png";
+import postgres from "./tech/postgres.png";
+import springboot from "./tech/springboot.png";
+import driveVision from "./driveVision.png";
+import raybud from "./raybud.png";
+import wanderVerse from "./wanderVerse.png";
 
 export {
+  wanderVerse,
+  driveVision,
+  raybud,
+  profilePic,
   logo,
   backend,
   embedded as creator,
@@ -85,6 +94,8 @@ export {
   nodejs,
   reactjs,
   redux,
+  postgres,
+  springboot,
   tailwind,
   typescript,
   threejs,

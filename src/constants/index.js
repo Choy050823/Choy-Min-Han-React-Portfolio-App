@@ -29,6 +29,11 @@ import {
   gameproject,
   chong,
   pak,
+  postgres,
+  springboot,
+  driveVision,
+  raybud,
+  wanderVerse,
 } from "../assets";
 
 export const navLinks = [
@@ -41,18 +46,26 @@ export const navLinks = [
     title: "Learning",
   },
   {
+    id: "projects",
+    title: "Projects",
+  },
+  {
+    id: "feedbacks",
+    title: "Feedbacks",
+  },
+  {
     id: "contact",
     title: "Contact",
   },
 ];
 
 const services = [
+  // {
+  //   title: "Frontend Developer",
+  //   icon: web,
+  // },
   {
-    title: "Frontend Developer",
-    icon: web,
-  },
-  {
-    title: "App Developer",
+    title: "Web App Developer",
     icon: mobile,
   },
   {
@@ -63,22 +76,22 @@ const services = [
     title: "Embedded Systems Developer",
     icon: embedded,
   },
-  {
-    title: "Technical Projects Enthusiast",
-    icon: project,
-  },
-  {
-    title: "Game Development Enthusiast",
-    icon: game,
-  },
+  // {
+  //   title: "Technical Projects Enthusiast",
+  //   icon: project,
+  // },
+  // {
+  //   title: "Game Development Enthusiast",
+  //   icon: game,
+  // },
   {
     title: "AI Development Enthusiast",
     icon: ai,
   },
-  {
-    title: "Cybersecurity Hobbyist",
-    icon: cyber,
-  },
+  // {
+  //   title: "Cybersecurity Hobbyist",
+  //   icon: cyber,
+  // },
 ];
 
 const technologies = [
@@ -103,8 +116,20 @@ const technologies = [
   //   icon: fusion,
   // },
   {
-    name: "MongoDB",
-    icon: mongodb,
+    name: "PostgreSQL",
+    icon: postgres,
+  },
+  {
+    name: "Springboot",
+    icon: springboot,
+  },
+  // {
+  //   name: "MongoDB",
+  //   icon: mongodb,
+  // },
+  {
+    name: "Express",
+    icon: express,
   },
   {
     name: "Tensorflow",
@@ -122,10 +147,7 @@ const technologies = [
     name: "Unity",
     icon: unity,
   },
-  {
-    name: "Express",
-    icon: express,
-  },
+
   {
     name: "OpenCV",
     icon: opencv,
@@ -227,7 +249,31 @@ const experiences = [
     points: [
       "Attracted to backend development in handling events of software",
       "Learnt these services to handle Client-Side and Server-Side Requests",
-      "Leant the concepts of HTTP and REST API",
+      "Learnt the concepts of HTTP and REST API",
+    ],
+  },
+  {
+    title: "React TS, Golang and PostgreSQL",
+    company_name: "Learning RDBMS with GoLang in NUS",
+    icon: postgres,
+    iconBg: "#E6DEDD",
+    date: "Jan 2024",
+    points: [
+      "Found that real world projects are more complex than I thought",
+      "Learnt Relational Database Management System (RDBMS) with PostgreSQL",
+      "Learnt GoLang, a programming language that is widely used in the industry",
+    ],
+  },
+  {
+    title: "Java Springboot",
+    company_name: "Learning the robust Spring framework",
+    icon: springboot,
+    iconBg: "#E6DEDD",
+    date: "May 2025",
+    points: [
+      "Learnt the advanced Java from NUS CS2030S module",
+      "Trying myself to learn the Spring framework, specifically Springboot",
+      "Planning to develop a full-stack web application that fullfills the needs of the industry",
     ],
   },
 ];
@@ -253,49 +299,86 @@ const testimonials = [
 
 const projects = [
   {
-    name: "16 x 16 x 16 LED Cube",
+    name: "WanderVerse",
     description:
-      "An LED Cube made by 4096 LEDs soldered together to make 3D effects as programmed. It is used in various opening ceremonies in Chong Hwa Independent High School.",
-    tags: [
-      {
-        name: "stm32",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "electronics",
-        color: "green-text-gradient",
-      },
-      {
-        name: "rust",
-        color: "pink-text-gradient",
-      },
-    ],
-    image: ledcube,
-    source_code_link: "https://github.com/",
-  },
-  {
-    name: "Vape Detection System",
-    description:
-      "A detection which specially designated to help the desciplinary teachers to reduce vaping cases among students in secondary school.",
+      "A NUS Orbital Project: Wanderverse is a travel discussion app that can help users to prepare travelling and share their travel experiences.",
     tags: [
       {
         name: "flutter",
         color: "blue-text-gradient",
       },
       {
-        name: "firebase",
+        name: "springboot",
         color: "green-text-gradient",
       },
       {
-        name: "esp32",
+        name: "postgreSQL",
         color: "pink-text-gradient",
       },
       {
-        name: "p5.js",
+        name: "Redis",
+        color: "pink-text-gradient",
+      },
+      {
+        name: "RabbitMQ",
+        color: "green-text-gradient",
+      },
+      {
+        name: "AgenticAI",
         color: "blue-text-gradient",
       },
     ],
-    image: vape,
+    image: wanderVerse,
+    source_code_link: "https://github.com/",
+  },
+  {
+    name: "Raybud",
+    description:
+      "A LLM-based AI Agent that helps elderlies to improve their lifestyle by providing companionship and assistance in daily tasks.",
+    tags: [
+      {
+        name: "flutter",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "SeaLion-LLM",
+        color: "green-text-gradient",
+      },
+      {
+        name: "postureDetection",
+        color: "pink-text-gradient",
+      },
+      {
+        name: "websocket",
+        color: "blue-text-gradient",
+      },
+    ],
+    image: raybud,
+    source_code_link: "https://github.com/",
+  },
+  {
+    name: "DriveVision",
+    description:
+      "AR-powered driving enhancement system that able to remove rain drops on AR-HUD windshield and provide a better driving experience.",
+    tags: [
+      {
+        name: "flutter",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "flask",
+        color: "green-text-gradient",
+      },
+      {
+        name: "RAG",
+        color: "pink-text-gradient",
+      },
+      {
+        name: "AR",
+        color: "blue-text-gradient",
+      },
+    ],
+    image: driveVision,
     source_code_link: "https://github.com/",
   },
   {
@@ -324,6 +407,32 @@ const projects = [
     source_code_link: "https://github.com/",
   },
   {
+    name: "Vape Detection System",
+    description:
+      "A detection which specially designated to help the desciplinary teachers to reduce vaping cases among students in secondary school.",
+    tags: [
+      {
+        name: "flutter",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "firebase",
+        color: "green-text-gradient",
+      },
+      {
+        name: "esp32",
+        color: "pink-text-gradient",
+      },
+      {
+        name: "p5.js",
+        color: "blue-text-gradient",
+      },
+    ],
+    image: vape,
+    source_code_link: "https://github.com/",
+  },
+
+  {
     name: "Lift Management System",
     description:
       "A monitoring system that helps lift users to reduce waiting time for the lift by knowing the Estimated Time of Arrival (ETA) of the lift.",
@@ -342,6 +451,27 @@ const projects = [
       },
     ],
     image: lift,
+    source_code_link: "https://github.com/",
+  },
+  {
+    name: "16 x 16 x 16 LED Cube",
+    description:
+      "An LED Cube made by 4096 LEDs soldered together to make 3D effects as programmed. It is used in various opening ceremonies in Chong Hwa Independent High School.",
+    tags: [
+      {
+        name: "stm32",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "electronics",
+        color: "green-text-gradient",
+      },
+      {
+        name: "rust",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: ledcube,
     source_code_link: "https://github.com/",
   },
   {

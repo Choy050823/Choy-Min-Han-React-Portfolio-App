@@ -1,11 +1,14 @@
 import { motion } from "framer-motion";
-
 import { styles } from "../style";
 import { ComputersCanvas } from "./canvas";
+import { isMobile } from "react-device-detect";
+import { profilePic } from "../assets";
 
 const Hero = () => {
   return (
-    <section className={`relative w-full h-screen mx-auto`}>
+    <section
+      className={`relative w-full h-screen mx-auto bg-hero-pattern bg-cover bg-no-repeat bg-center`}
+    >
       <div
         className={`absolute inset-0 top-[80px] max-w-7xl mx-auto ${styles.paddingX} flex flex-row items-start gap-5`}
       >
@@ -15,18 +18,74 @@ const Hero = () => {
         </div>
 
         <div>
-          <h1 className={`${styles.heroHeadText} text-white`}>
-            Hi, I'm <br className="sm:hidden" />
-            <span className="text-[#915EFF]">Choy Min Han</span>
+          <h1 className={`${styles.heroHeadText}`}>
+            Hi, I'm <br />
+            <span>Choy Min Han</span>
           </h1>
-          <p className={`${styles.heroSubText} mt-2 text-white-100`}>
+          <p className={`${styles.heroSubText} mt-2`}>
             I am a digital maker who <br className="sm:block hidden" />
             likes to create technical projects!
           </p>
         </div>
+
+        {!isMobile && (
+          <motion.div
+            className="relative w-[200px] h-[200px] md:w-[250px] md:h-[250px] ml-auto mr-4 mt-10"
+            initial={{ scale: 0 }}
+            animate={{ scale: 1 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
+            <div className="absolute w-full h-full border-4 border-transparent rounded-full bg-gradient-to-r from-purple-500 to-cyan-500 animate-spin-slow">
+              <div className="absolute w-full h-full border-4 border-purple-500 rounded-full shadow-[0_0_20px_rgba(147,94,255,0.7)] animate-pulse-slow">
+                <img
+                  src={profilePic}
+                  alt="Choy Min Han"
+                  className="w-full h-full object-cover rounded-full"
+                />
+              </div>
+            </div>
+            <div className="absolute inset-0 rounded-full shadow-[0_0_20px_rgba(147,94,255,0.8),0_0_40px_rgba(0,255,255,0.3)]" />
+          </motion.div>
+        )}
       </div>
 
-      <ComputersCanvas />
+      {isMobile && (
+        // <section
+        //   className={`relative w-full h-screen mx-auto bg-hero-pattern bg-cover bg-no-repeat bg-center bg-gradient-to-br from-gray-900 to-black`}
+        // >
+        <div
+          className={`absolute inset-0 top-[80px] max-w-7xl mx-auto ${styles.paddingX} flex flex-col items-center justify-center text-center`}
+        >
+          <motion.div
+            className="relative w-[250px] h-[250px] md:w-[300px] md:h-[300px]"
+            initial={{ scale: 0 }}
+            animate={{ scale: 1 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
+            <div className="absolute w-full h-full border-4 border-purple-500 rounded-full shadow-[0_0_20px_rgba(147,94,255,0.7)] animate-pulse-slow">
+              <img
+                src={profilePic}
+                alt="Choy Min Han"
+                className="w-full h-full object-cover rounded-full"
+              />
+            </div>
+          </motion.div>
+          {/* <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.5, duration: 0.8 }}
+              className="mt-6"
+            >
+              <h1 className={`${styles.heroHeadText}`}>
+                <span className="text-purple-400">Hi, I'm</span> <br />
+                <span className="text-white">Choy Min Han</span>
+              </h1>
+              <p className={`${styles.heroSubText} mt-2`}>
+                I am a digital maker who likes to create technical projects!
+              </p>
+            </motion.div> */}
+        </div>
+      )}
 
       <div className="absolute xs:bottom-10 bottom-32 w-full flex justify-center items-center">
         <a href="#about">

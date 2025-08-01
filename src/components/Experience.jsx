@@ -10,6 +10,7 @@ import { styles } from "../style";
 import { experiences } from "../constants";
 import { SectionWrapper } from "../hoc";
 import { textVariant } from "../utils/motion";
+import { isMobile } from "react-device-detect";
 
 const ExperienceCard = ({ experience }) => (
   <VerticalTimelineElement
@@ -58,20 +59,31 @@ const Experience = () => {
 
   return (
     <>
-      <motion.div
-        ref={ref}
-        variants={variants}
-        initial="hidden"
-        animate={inView ? "show" : "hidden"}
-        className="text-content"
-      >
-        <p className={`${styles.sectionSubText} text-center`}>
-          What I learnt so far
-        </p>
-        <h2 className={`${styles.sectionHeadText} text-center`}>
-          Learning Journey.
-        </h2>
-      </motion.div>
+      {isMobile ? (
+        <div className="text-content" ref={ref}>
+          <p className={`${styles.sectionSubText} text-center`}>
+            What I learnt so far
+          </p>
+          <h2 className={`${styles.sectionHeadText} text-center`}>
+            Learning Journey.
+          </h2>
+        </div>
+      ) : (
+        <motion.div
+          ref={ref}
+          variants={variants}
+          initial="hidden"
+          animate={inView ? "show" : "hidden"}
+          className="text-content"
+        >
+          <p className={`${styles.sectionSubText} text-center`}>
+            What I learnt so far
+          </p>
+          <h2 className={`${styles.sectionHeadText} text-center`}>
+            Learning Journey.
+          </h2>
+        </motion.div>
+      )}
 
       <div className="mt-20 flex flex-col">
         <VerticalTimeline>

@@ -8,7 +8,7 @@ const Stars = (props) => {
   const ref = useRef();
   const [sphere] = useState(() =>
     // Fix: Use 5001 (3 * 1667 points) instead of 5000
-    random.inSphere(new Float32Array(5001), { radius: 1.2 })
+    random.inSphere(new Float32Array(2001), { radius: 1.2 })
   );
 
   useFrame((state, delta) => {
